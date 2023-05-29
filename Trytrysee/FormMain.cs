@@ -16,5 +16,17 @@ namespace Trytrysee
         {
             InitializeComponent();
         }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            var frm= new UserMain();
+            frm.ShowDialog();
+        }
+
+        private void btnSeller_Click(object sender, EventArgs e)
+        {
+            var frm = new SellerMain();
+            frm.ShowDialog();
+        }
     }
 }

@@ -66,16 +66,79 @@
     <Compile Include="EDModels\ShoppingCart.cs" />
     <Compile Include="EDModels\ShoppingCartDetail.cs" />
     <Compile Include="EDModels\User.cs" />
+    <Compile Include="FormCreateSeller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreateSeller.Designer.cs">
+      <DependentUpon>FormCreateSeller.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSellerPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSellerPage.Designer.cs">
+      <DependentUpon>FormSellerPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductAdd.Designer.cs">
+      <DependentUpon>ProductAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductMain.Designer.cs">
+      <DependentUpon>ProductMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellerMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellerMain.Designer.cs">
+      <DependentUpon>SellerMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shipment.Designer.cs">
+      <DependentUpon>Shipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserMain.Designer.cs">
+      <DependentUpon>UserMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCreateSeller.resx">
+      <DependentUpon>FormCreateSeller.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSellerPage.resx">
+      <DependentUpon>FormSellerPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductAdd.resx">
+      <DependentUpon>ProductAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductMain.resx">
+      <DependentUpon>ProductMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellerMain.resx">
+      <DependentUpon>SellerMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shipment.resx">
+      <DependentUpon>Shipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserMain.resx">
+      <DependentUpon>UserMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
