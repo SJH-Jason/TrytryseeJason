@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,13 +27,14 @@ namespace Trytrysee
 
         private void ProductAdd_Load(object sender, EventArgs e)
         {
-            IQueryable<Product> query = new Model1().Products.AsNoTracking();
+            //IQueryable<Product> query = new Model1().Products.AsNoTracking();
 
-            _ProductID = query.OrderByDescending(c => c.ProductID).Select(c => c.ProductID).FirstOrDefault();
-            _SellerID= (int)query.OrderByDescending(c => c.ProductID).Select(c => c.SellerID).FirstOrDefault();
+            //_ProductID = query.OrderByDescending(c => c.ProductID).Select(c => c.ProductID).FirstOrDefault();
+            //_SellerID= (int)query.OrderByDescending(c => c.ProductID).Select(c => c.SellerID).FirstOrDefault();
+            //txtProductId.Text = _ProductID.ToString();
+            ////MessageBox.Show($"{_SellerID}");
+
             txtProductId.Text = _ProductID.ToString();
-            MessageBox.Show($"{_SellerID}");
-
             var product = new Model1()
                             .Products
                             .AsNoTracking()
@@ -42,12 +45,51 @@ namespace Trytrysee
             txtProductPrice.Text = product.ProductPrice.ToString();
             txtProductDescription.Text = product.ProductDescription;
 
+            var db = new Model1();
+            var result = from p in db.Products//商品表
+                         join o in db.ProductInventories 
+                         on p.ProductID equals o.ProductID  //進貨單表
+                         where p.ProductID == _ProductID
+                         group o by o.ProductID into g
+                         select new
+                         {
+                             ProductID = g.Key,
+                             TotalQuantity = g.Sum(x => x.Quantity)
+                         };
+
+            var item = result.FirstOrDefault();
+            if (item != null)
+            {
+                txtTotal.Text = item.TotalQuantity.ToString();
+            }
+            else
+            {
+                txtTotal.Text = "0";
+            }
+        }
+
+        public void ProductAddNew()
+        {
+            IQueryable<Product> query = new Model1().Products.AsNoTracking();
+            _ProductID = query.OrderByDescending(c => c.ProductID).Select(c => c.ProductID).FirstOrDefault();
+            _SellerID = (int)query.OrderByDescending(c => c.ProductID).Select(c => c.SellerID).FirstOrDefault();
+
+        }
+
+
+
+        public void ProductEdit(int x,int y)
+        {
+            IQueryable<Product> query = new Model1().Products.AsNoTracking();
+            _ProductID = x;
+            _SellerID = y;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             var db = new Model1 ();
-
+            int ProductId = Convert.ToInt32(txtProductId.Text);
             string name = txtProductName.Text;
             string categoryId = txtCategoryId.Text;
             string description = txtProductDescription.Text;
@@ -76,7 +118,8 @@ namespace Trytrysee
                 db.SaveChanges();
             }
 
-                MessageBox.Show("已更新完成!");
+            MessageBox.Show("已更新完成!");
+            Close();
         }
 
         private void btnQuantity_Click(object sender, EventArgs e)

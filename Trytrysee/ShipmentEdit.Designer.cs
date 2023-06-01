@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtShipmentID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtOrderId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtSellerId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -65,12 +65,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ShipmentId";
             // 
-            // textBox1
+            // txtShipmentID
             // 
-            this.textBox1.Location = new System.Drawing.Point(129, 85);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 25);
-            this.textBox1.TabIndex = 1;
+            this.txtShipmentID.Location = new System.Drawing.Point(129, 85);
+            this.txtShipmentID.Name = "txtShipmentID";
+            this.txtShipmentID.Size = new System.Drawing.Size(100, 25);
+            this.txtShipmentID.TabIndex = 0;
             // 
             // label2
             // 
@@ -81,12 +81,12 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "OrderId";
             // 
-            // textBox2
+            // txtOrderId
             // 
-            this.textBox2.Location = new System.Drawing.Point(129, 125);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 25);
-            this.textBox2.TabIndex = 1;
+            this.txtOrderId.Location = new System.Drawing.Point(129, 125);
+            this.txtOrderId.Name = "txtOrderId";
+            this.txtOrderId.Size = new System.Drawing.Size(100, 25);
+            this.txtOrderId.TabIndex = 1;
             // 
             // label3
             // 
@@ -97,12 +97,12 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "SellerId";
             // 
-            // textBox3
+            // txtSellerId
             // 
-            this.textBox3.Location = new System.Drawing.Point(129, 169);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 25);
-            this.textBox3.TabIndex = 1;
+            this.txtSellerId.Location = new System.Drawing.Point(129, 169);
+            this.txtSellerId.Name = "txtSellerId";
+            this.txtSellerId.Size = new System.Drawing.Size(100, 25);
+            this.txtSellerId.TabIndex = 2;
             // 
             // label4
             // 
@@ -154,7 +154,7 @@
             this.btnShip.Location = new System.Drawing.Point(88, 381);
             this.btnShip.Name = "btnShip";
             this.btnShip.Size = new System.Drawing.Size(66, 31);
-            this.btnShip.TabIndex = 16;
+            this.btnShip.TabIndex = 4;
             this.btnShip.Text = "已出貨";
             this.btnShip.UseVisualStyleBackColor = true;
             this.btnShip.Click += new System.EventHandler(this.btnShip_Click);
@@ -165,7 +165,7 @@
             this.btnArrival.Location = new System.Drawing.Point(354, 381);
             this.btnArrival.Name = "btnArrival";
             this.btnArrival.Size = new System.Drawing.Size(66, 31);
-            this.btnArrival.TabIndex = 17;
+            this.btnArrival.TabIndex = 5;
             this.btnArrival.Text = "已送達";
             this.btnArrival.UseVisualStyleBackColor = true;
             this.btnArrival.Click += new System.EventHandler(this.btnArrival_Click);
@@ -176,8 +176,8 @@
             this.btnCompletion.Location = new System.Drawing.Point(620, 381);
             this.btnCompletion.Name = "btnCompletion";
             this.btnCompletion.Size = new System.Drawing.Size(66, 31);
-            this.btnCompletion.TabIndex = 18;
-            this.btnCompletion.Text = "已完成";
+            this.btnCompletion.TabIndex = 6;
+            this.btnCompletion.Text = "結單";
             this.btnCompletion.UseVisualStyleBackColor = true;
             this.btnCompletion.Click += new System.EventHandler(this.btnCompletion_Click);
             // 
@@ -187,7 +187,7 @@
             this.txtTime1.Name = "txtTime1";
             this.txtTime1.ReadOnly = true;
             this.txtTime1.Size = new System.Drawing.Size(124, 25);
-            this.txtTime1.TabIndex = 20;
+            this.txtTime1.TabIndex = 3;
             this.txtTime1.Text = "訂單時間";
             // 
             // txtTime3
@@ -206,7 +206,7 @@
             this.txtAction1.ReadOnly = true;
             this.txtAction1.Size = new System.Drawing.Size(124, 25);
             this.txtAction1.TabIndex = 22;
-            this.txtAction1.Text = "準備中/已出貨";
+            this.txtAction1.Text = "準備中";
             // 
             // txtAction2
             // 
@@ -215,7 +215,7 @@
             this.txtAction2.ReadOnly = true;
             this.txtAction2.Size = new System.Drawing.Size(124, 25);
             this.txtAction2.TabIndex = 23;
-            this.txtAction2.Text = "運送中/已送達";
+            this.txtAction2.Text = "運送中";
             // 
             // txtAction3
             // 
@@ -224,7 +224,7 @@
             this.txtAction3.ReadOnly = true;
             this.txtAction3.Size = new System.Drawing.Size(124, 25);
             this.txtAction3.TabIndex = 25;
-            this.txtAction3.Text = "等候領取/已領取/已完成";
+            this.txtAction3.Text = "等候中/等候領取/已領取/已完成";
             // 
             // label9
             // 
@@ -280,6 +280,7 @@
             this.btnReset.TabIndex = 31;
             this.btnReset.Text = "重設";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // label11
             // 
@@ -291,7 +292,7 @@
             this.label11.TabIndex = 32;
             this.label11.Text = "單筆出貨單";
             // 
-            // Shipment
+            // ShipmentEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -316,13 +317,13 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSellerId);
+            this.Controls.Add(this.txtOrderId);
+            this.Controls.Add(this.txtShipmentID);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Shipment";
+            this.Name = "ShipmentEdit";
             this.Text = "Shipment";
             this.Load += new System.EventHandler(this.Shipment_Load);
             this.ResumeLayout(false);
@@ -333,11 +334,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtShipmentID;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtOrderId;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtSellerId;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;

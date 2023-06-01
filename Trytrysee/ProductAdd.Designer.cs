@@ -42,6 +42,8 @@
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnQuantity = new System.Windows.Forms.Button();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label7
@@ -164,11 +166,30 @@
             this.btnQuantity.UseVisualStyleBackColor = true;
             this.btnQuantity.Click += new System.EventHandler(this.btnQuantity_Click);
             // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(143, 352);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(100, 25);
+            this.txtTotal.TabIndex = 23;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(50, 355);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 15);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "商品庫存量";
+            // 
             // ProductAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnQuantity);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtProductQuantity);
@@ -207,5 +228,7 @@
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnQuantity;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Label label6;
     }
 }

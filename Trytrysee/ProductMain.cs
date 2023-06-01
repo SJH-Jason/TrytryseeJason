@@ -29,6 +29,22 @@ namespace Trytrysee
         {
             IQueryable<Product> query = new Model1().Products.AsNoTracking();
             this.dataGridView1.DataSource = query.Where(c=>c.SellerID== _SellerID).ToList();
+
+            var db = new Model1();
+            var data2 = from p in db.Products
+                        join q in db.ProductInventories
+                        on p.ProductID equals q.ProductID into joinedData
+                        from j in joinedData.DefaultIfEmpty()
+                        group j by new { p.ProductID, p.ProductName, p.ProductPrice } into g
+                        select new
+                        {
+                            g.Key.ProductID,
+                            g.Key.ProductName,
+                            g.Key.ProductPrice,
+                            TotalQuantity = g.Sum(x => x.Quantity)
+                        };
+
+            this.dataGridView1.DataSource = data2.ToList();
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
@@ -41,8 +57,26 @@ namespace Trytrysee
             db.Products.Add(Product);
             db.SaveChanges();
 
-            var frm= new ProductAdd(Product.ProductID, _SellerID);
+            var frm = new ProductAdd(Product.ProductID, _SellerID);
+            frm.ProductAddNew();
             frm.ShowDialog();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            int _productid = (int)row.Cells[0].Value;
+
+            var frm2 = new ProductAdd(_productid, _SellerID);
+            frm2.ProductEdit(_productid, _SellerID);
+            frm2.ShowDialog();
+
+        }
+
+        private void btnRenew_Click(object sender, EventArgs e)
+        {
+            Display();
         }
     }
 }
