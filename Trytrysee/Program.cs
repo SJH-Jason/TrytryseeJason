@@ -17,7 +17,7 @@ namespace Trytrysee
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Shipment());
-            Application.Run(new FormSellerPage());
+            Application.Run(new ProductAdd(110117,10003));
         }
     }
 }

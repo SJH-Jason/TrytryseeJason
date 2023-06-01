@@ -14,8 +14,22 @@ namespace Trytrysee.EDModels
 
         public int? SellerID { get; set; }
 
-        [Column(TypeName = "date")]
         public DateTime? ShipmentDate { get; set; }
+
+        [StringLength(50)]
+        public string ShipmentStatus { get; set; }
+
+        public DateTime? ShipDate { get; set; }
+
+        [StringLength(50)]
+        public string CompletionStatus { get; set; }
+
+        public DateTime? ArrivalTimeDate { get; set; }
+
+        [StringLength(50)]
+        public string ReceiveStatus { get; set; }
+
+        public DateTime? CompletionDate { get; set; }
 
         public virtual Order Order { get; set; }
 

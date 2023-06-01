@@ -6,14 +6,11 @@ namespace Trytrysee.EDModels
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class ProductCategory
+    public partial class ProductMainCategory
     {
         [Key]
         [StringLength(50)]
         public string CategoryID { get; set; }
-
-        [StringLength(50)]
-        public string ParentCategoryID { get; set; }
 
         [StringLength(50)]
         public string CategoryName { get; set; }

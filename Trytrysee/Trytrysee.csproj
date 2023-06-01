@@ -61,10 +61,12 @@
     <Compile Include="EDModels\Product.cs" />
     <Compile Include="EDModels\ProductCategory.cs" />
     <Compile Include="EDModels\ProductInventory.cs" />
+    <Compile Include="EDModels\ProductMainCategory.cs" />
     <Compile Include="EDModels\Seller.cs" />
     <Compile Include="EDModels\Shipment.cs" />
     <Compile Include="EDModels\ShoppingCart.cs" />
     <Compile Include="EDModels\ShoppingCartDetail.cs" />
+    <Compile Include="EDModels\sysdiagram.cs" />
     <Compile Include="EDModels\User.cs" />
     <Compile Include="FormCreateSeller.cs">
       <SubType>Form</SubType>
@@ -102,11 +104,17 @@
     <Compile Include="SellerMain.Designer.cs">
       <DependentUpon>SellerMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Shipment.cs">
+    <Compile Include="ShipmentEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Shipment.Designer.cs">
-      <DependentUpon>Shipment.cs</DependentUpon>
+    <Compile Include="ShipmentEdit.Designer.cs">
+      <DependentUpon>ShipmentEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShipmentsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShipmentsView.Designer.cs">
+      <DependentUpon>ShipmentsView.cs</DependentUpon>
     </Compile>
     <Compile Include="UserMain.cs">
       <SubType>Form</SubType>
@@ -134,8 +142,11 @@
     <EmbeddedResource Include="SellerMain.resx">
       <DependentUpon>SellerMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Shipment.resx">
-      <DependentUpon>Shipment.cs</DependentUpon>
+    <EmbeddedResource Include="ShipmentEdit.resx">
+      <DependentUpon>ShipmentEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShipmentsView.resx">
+      <DependentUpon>ShipmentsView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserMain.resx">
       <DependentUpon>UserMain.cs</DependentUpon>

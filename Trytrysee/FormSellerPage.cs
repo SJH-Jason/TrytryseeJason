@@ -44,7 +44,7 @@ namespace Trytrysee
 
         private void btnShipments_Click(object sender, EventArgs e)
         {
-            var frm = new Shipment();
+            var frm = new ShipmentEdit();
             frm.ShowDialog();
         }
     }

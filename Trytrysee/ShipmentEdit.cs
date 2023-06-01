@@ -11,10 +11,10 @@ using Trytrysee.EDModels;
 
 namespace Trytrysee
 {
-    public partial class Shipment : Form
+    public partial class ShipmentEdit : Form
     {
        
-        public Shipment()
+        public ShipmentEdit()
         {
             InitializeComponent();
         }

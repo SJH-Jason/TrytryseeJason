@@ -1,6 +1,6 @@
 ﻿namespace Trytrysee
 {
-    partial class Shipment
+    partial class ShipmentEdit
     {
         /// <summary>
         /// Required designer variable.
@@ -53,12 +53,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnEnd = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 42);
+            this.label1.Location = new System.Drawing.Point(49, 88);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 15);
             this.label1.TabIndex = 0;
@@ -66,7 +67,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(129, 42);
+            this.textBox1.Location = new System.Drawing.Point(129, 85);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 25);
             this.textBox1.TabIndex = 1;
@@ -74,7 +75,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(49, 97);
+            this.label2.Location = new System.Drawing.Point(49, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 0;
@@ -82,7 +83,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(129, 97);
+            this.textBox2.Location = new System.Drawing.Point(129, 125);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 25);
             this.textBox2.TabIndex = 1;
@@ -90,7 +91,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(49, 152);
+            this.label3.Location = new System.Drawing.Point(51, 172);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 15);
             this.label3.TabIndex = 0;
@@ -98,7 +99,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(129, 152);
+            this.textBox3.Location = new System.Drawing.Point(129, 169);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 25);
             this.textBox3.TabIndex = 1;
@@ -280,11 +281,22 @@
             this.btnReset.Text = "重設";
             this.btnReset.UseVisualStyleBackColor = true;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("微軟正黑體", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label11.Location = new System.Drawing.Point(49, 28);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(155, 36);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "單筆出貨單";
+            // 
             // Shipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnEnd);
             this.Controls.Add(this.txtTime2);
@@ -345,5 +357,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnEnd;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Label label11;
     }
 }

@@ -1,14 +1,14 @@
-using System;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity;
-using System.Linq;
-
 namespace Trytrysee.EDModels
 {
+    using System;
+    using System.Data.Entity;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Linq;
+
     public partial class Model1 : DbContext
     {
         public Model1()
-            : base("name=AppDbContext")
+            : base("name=Model1")
         {
         }
 
@@ -21,7 +21,9 @@ namespace Trytrysee.EDModels
         public virtual DbSet<Shipment> Shipments { get; set; }
         public virtual DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public virtual DbSet<ShoppingCartDetail> ShoppingCartDetails { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<ProductMainCategory> ProductMainCategories { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -29,11 +31,6 @@ namespace Trytrysee.EDModels
                 .HasMany(e => e.OrderDetails)
                 .WithRequired(e => e.Order)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<ProductCategory>()
-                .HasMany(e => e.ProductCategories1)
-                .WithOptional(e => e.ProductCategory1)
-                .HasForeignKey(e => e.ParentCategoryID);
 
             modelBuilder.Entity<Product>()
                 .Property(e => e.ProductPrice)
