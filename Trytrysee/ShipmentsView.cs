@@ -42,6 +42,8 @@ namespace Trytrysee
             //MessageBox.Show("Id=" + _shipmentid+_orderid);
             var frm = new ShipmentEdit();
             frm._shipmentid= _shipmentid;
+            frm._orderid= _orderid;
+            frm._sellerid = _SellerID;
             frm.ShowDialog();
 
         }

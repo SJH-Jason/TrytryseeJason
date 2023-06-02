@@ -27,6 +27,7 @@ namespace Trytrysee
         private void Shipment_Load(object sender, EventArgs e)
         {
             Display();
+            DisplayView();
         }
 
         public void Display() 
@@ -59,6 +60,27 @@ namespace Trytrysee
                 txtAction3.Text = query.Where(x => x.ShipmentID == _shipmentid).Select(x => x.ReceiveStatus).FirstOrDefault().ToString();
                 txtTime4.Text = query.Where(x => x.ShipmentID == _shipmentid).Select(x => x.CompletionDate).FirstOrDefault()?.ToString("yyyy-MM-dd HH:mm");
             }
+        }
+
+        public void DisplayView()
+        {
+            IQueryable<OrderDetail> query = new Model1().OrderDetails.AsNoTracking();
+            this.dataGridView1.DataSource = query.ToList();
+
+            var db = new Model1();
+            var data = from o in db.OrderDetails
+                       join p in db.Products
+                       on o.ProductID equals p.ProductID
+                       select new
+                       {
+                           o.ProductID,
+                           p.ProductName,
+                           p.ProductPrice,
+                           o.Quantity,
+                           p.SellerID,
+                           o.OrderID,
+                       };
+            this.dataGridView1.DataSource=data.Where(c=>c.OrderID==_orderid && c.SellerID==_sellerid).ToList();
         }
 
         private void btnShip_Click(object sender, EventArgs e)
